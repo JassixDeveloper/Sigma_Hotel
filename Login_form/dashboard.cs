@@ -82,6 +82,7 @@ namespace Login_form
             mainpanel.Controls.Add(h);
             h.Show();
             top.Text = "Home";
+            namePanel.BackColor = Color.FromArgb(78, 184, 206);
             selectHome.BackColor = Color.White;
             selectClient.BackColor = Color.Transparent;
             selectRoom.BackColor = Color.Transparent;
@@ -99,6 +100,7 @@ namespace Login_form
             mainpanel.Controls.Add(c);
             c.Show();
             top.Text = "Client";
+            namePanel.BackColor = Color.FromArgb(102, 255, 153);
             selectHome.BackColor = Color.Transparent;
             selectClient.BackColor = Color.White;
             selectRoom.BackColor = Color.Transparent;
@@ -116,6 +118,7 @@ namespace Login_form
             mainpanel.Controls.Add(r);
             r.Show();
             top.Text = "Room";
+            namePanel.BackColor = Color.FromArgb(187, 187, 119);
             selectHome.BackColor = Color.Transparent;
             selectClient.BackColor = Color.Transparent;
             selectRoom.BackColor = Color.White;
@@ -133,6 +136,7 @@ namespace Login_form
             mainpanel.Controls.Add(rs);
             rs.Show();
             top.Text = "Reservation";
+            namePanel.BackColor = Color.FromArgb(119, 136, 187);
             top.Location = new Point(230, 17);
             selectHome.BackColor = Color.Transparent;
             selectClient.BackColor = Color.Transparent;
@@ -151,6 +155,7 @@ namespace Login_form
             mainpanel.Controls.Add(s);
             s.Show();
             top.Text = "Setting";
+            namePanel.BackColor = Color.FromArgb(255, 80, 80);
             top.Location = new Point(260, 16);
             selectHome.BackColor = Color.Transparent;
             selectClient.BackColor = Color.Transparent;
@@ -160,6 +165,29 @@ namespace Login_form
             selectLog.BackColor = Color.Transparent;
             selectExit.BackColor = Color.Transparent;            
         }
+
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to Logout?", "Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                login f2 = new login();
+                f2.ShowDialog();
+            }
+            else if (result == DialogResult.No)
+            {
+                //...
+            }
+                        
+            selectHome.BackColor = Color.Transparent;
+            selectClient.BackColor = Color.Transparent;
+            selectRoom.BackColor = Color.Transparent;
+            selectRsrv.BackColor = Color.Transparent;
+            selectSetting.BackColor = Color.Transparent;
+            selectLog.BackColor = Color.White;
+            selectExit.BackColor = Color.Transparent;
+        }      
 
         private void button20_Click(object sender, EventArgs e)
         {
@@ -176,17 +204,6 @@ namespace Login_form
         private void panel16_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void logoutbtn_Click(object sender, EventArgs e)
-        {
-            selectHome.BackColor = Color.Transparent;
-            selectClient.BackColor = Color.Transparent;
-            selectRoom.BackColor = Color.Transparent;
-            selectRsrv.BackColor = Color.Transparent;
-            selectSetting.BackColor = Color.Transparent;
-            selectLog.BackColor = Color.White;
-            selectExit.BackColor = Color.Transparent;
-        }
+        }        
     }
 }
