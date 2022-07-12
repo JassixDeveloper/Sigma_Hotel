@@ -30,4 +30,3 @@ C:\Users\dell\Documents\Visual Studio 2015\Projects\Sigma_Hotel\Login_form\obj\D
 C:\Users\dell\Documents\Visual Studio 2015\Projects\Sigma_Hotel\Login_form\obj\Debug\Login_form.setting.resources
 C:\Users\dell\Documents\Visual Studio 2015\Projects\Sigma_Hotel\Login_form\obj\Debug\Login_form.signup.resources
 C:\Users\dell\Documents\Visual Studio 2015\Projects\Sigma_Hotel\Login_form\obj\Debug\Login_form.csproj.GenerateResource.Cache
-C:\Users\dell\Documents\Visual Studio 2015\Projects\Sigma_Hotel\Login_form\bin\Debug\MySql.Data.dll

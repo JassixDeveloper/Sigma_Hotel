@@ -92,30 +92,36 @@ namespace Login_form
 
         private void button2_Click(object sender, EventArgs e)
         {            
-            if(txt_Username == null && txt_Password == null && txt_Email == null)
-            {
-                label1.Text = "Text Box is Empty";
+            if(txt_Username.Text == "Username" && txt_Password.Text == "Password" && txt_Email.Text == "Email")
+            {                
                 MessageBox.Show("Fill in all entry fields", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);                
             }           
             else
             {
-                string connString = "server=localhost;user=root;Port=3306;password=mysql;";
-                MySqlConnection conn = new MySqlConnection(connString);
-                MySqlCommand command = conn.CreateCommand();
+                string connStr = "server=localhost;user=root;port=3306;password=mysql;";
+                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlCommand cmd;
+                string s0;
+
                 try
                 {
-
-
                     conn.Open();
-                    command.CommandText = "Create Database if not exists `sigma_hotel`";
-                    command.CommandText = "CREATE TABLE if not exists `user`(Username char(50), Password varchar(50), Email char(50)";
+                    s0 = "CREATE DATABASE IF NOT EXISTS `sigma_hotel`;";
+                    cmd = new MySqlCommand(s0, conn);
                     conn.Close();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.ToString());
                 }
-            }            
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login log = new login();
+            log.ShowDialog();
         }
     }
 }
